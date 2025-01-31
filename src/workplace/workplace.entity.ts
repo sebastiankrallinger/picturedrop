@@ -16,4 +16,9 @@ export class Workplace {
 
   @Column({ name: 'DescriptionEn' })
   descriptionEn: string;
+
+  @Column({ name: 'TrialStartOn' })
+  trialStartDate: Date;
+  @Column({ name: 'TrialEndsOn' })
+  trialEndDate: Date;
 }

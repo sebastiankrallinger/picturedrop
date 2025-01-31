@@ -14,6 +14,7 @@ import { Challenge } from './challenge/challenge.entity';
 import { File } from './file/file.entity';
 import { Submission } from './submission/submission.entity';
 import { WorkplaceUser } from './workplaceUser/workplaceUser.entity';
+import { SubmissionItem } from './submission/submissionItem.entity';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { WorkplaceUser } from './workplaceUser/workplaceUser.entity';
         Challenge,
         File,
         Submission,
+        SubmissionItem,
         WorkplaceUser,
       ],
       synchronize: false,
