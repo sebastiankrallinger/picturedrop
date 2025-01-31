@@ -2,10 +2,18 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './user/user.module';
 import { WorkplaceModule } from './workplace/workplace.module';
-import { VoucherModule } from './vouchers/voucher.module';
+import { VoucherModule } from './voucher/voucher.module';
+import { ChallengeModule } from './challenge/challenge.module';
+import { FileModule } from './file/file.module';
+import { SubmissionModule } from './submission/submission.module';
+import { WorkplaceUserModule } from './workplaceUser/workplaceUser.module';
 import { User } from './user/user.entity';
 import { Workplace } from './workplace/workplace.entity';
-import { Voucher } from './vouchers/voucher.entity';
+import { Voucher } from './voucher/voucher.entity';
+import { Challenge } from './challenge/challenge.entity';
+import { File } from './file/file.entity';
+import { Submission } from './submission/submission.entity';
+import { WorkplaceUser } from './workplaceUser/workplaceUser.entity';
 
 @Module({
   imports: [
@@ -16,12 +24,24 @@ import { Voucher } from './vouchers/voucher.entity';
       username: 'myuser',
       password: 'mypassword',
       database: 'mydb',
-      entities: [User, Workplace, Voucher],
+      entities: [
+        User,
+        Workplace,
+        Voucher,
+        Challenge,
+        File,
+        Submission,
+        WorkplaceUser,
+      ],
       synchronize: false,
     }),
     UsersModule,
     WorkplaceModule,
     VoucherModule,
+    ChallengeModule,
+    FileModule,
+    SubmissionModule,
+    WorkplaceUserModule,
   ],
 })
 export class AppModule {}

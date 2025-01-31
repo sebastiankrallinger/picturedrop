@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
-import { VoucherService } from '../vouchers/voucher.service';
-import { Voucher } from '../vouchers/voucher.entity';
+import { VoucherService } from './voucher.service';
+import { Voucher } from './voucher.entity';
 
 @Controller('vouchers')
 export class VoucherController {
