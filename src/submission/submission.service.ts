@@ -9,6 +9,7 @@ export class SubmissionService {
   constructor(
     @InjectRepository(Submission)
     private submissionRepository: Repository<Submission>,
+    @InjectRepository(SubmissionItem)
     private submissionItemRepository: Repository<SubmissionItem>,
   ) {}
 
