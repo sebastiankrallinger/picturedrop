@@ -10,17 +10,20 @@ export class WorkplaceController {
     private readonly submissionService: SubmissionService,
   ) {}
 
+  //alle Workplaces
   @Get()
   async findAll(): Promise<Workplace[]> {
     return this.workplaceService.findAll();
   }
 
+  //Gesamtanzahl an Uploads
   @Get('/uploads')
   async getTotalUploads(): Promise<number> {
     const uploads = await this.submissionService.findAllSubmissionItems();
     return uploads.length;
   }
 
+  //Gesatmanzahl an aktiven Workplaces
   @Get('/active')
   async getActiveWorkspaces(): Promise<number> {
     const workspaces = await this.workplaceService.findAll();
@@ -30,6 +33,7 @@ export class WorkplaceController {
     return activeWorkspaces.length;
   }
 
+  //Gesamtanzahl an inaktiven Workplaces
   @Get('/inactive')
   async getInactiveWorkspaces(): Promise<number> {
     const workspaces = await this.workplaceService.findAll();

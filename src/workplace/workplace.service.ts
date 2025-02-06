@@ -10,6 +10,7 @@ export class WorkplaceService {
     private workplaceRepository: Repository<Workplace>,
   ) {}
 
+  //Workplaces aus DB abrufen
   async findAll(): Promise<Workplace[]> {
     return this.workplaceRepository.find();
   }

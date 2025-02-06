@@ -10,6 +10,7 @@ export class VoucherService {
     private voucherRepository: Repository<Voucher>,
   ) {}
 
+  //Daten aus der DB laden
   async findAll(): Promise<Voucher[]> {
     return this.voucherRepository.find();
   }

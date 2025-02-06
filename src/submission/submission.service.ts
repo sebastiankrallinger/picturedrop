@@ -13,10 +13,12 @@ export class SubmissionService {
     private submissionItemRepository: Repository<SubmissionItem>,
   ) {}
 
+  //Submission-Daten aus DB abrufen
   async findAllSubmissions(): Promise<Submission[]> {
     return this.submissionRepository.find();
   }
 
+  //SubmissionItem-Daten aus DB abrufen
   async findAllSubmissionItems(): Promise<SubmissionItem[]> {
     return this.submissionItemRepository.find();
   }
