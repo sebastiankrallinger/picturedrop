@@ -16,4 +16,17 @@ export class SubmissionController {
   async findAllItems(): Promise<SubmissionItem[]> {
     return this.submissionService.findAllSubmissionItems();
   }
+
+  @Get('/statistics')
+  async getUploadsPerMonth(): Promise<number[]> {
+    const uploads = await this.submissionService.findAllSubmissionItems();
+    const uploadsPerMonth: number[] = new Array<number>(12).fill(0);
+    uploads.forEach((u) => {
+      if (u.createdOn instanceof Date) {
+        const month = u.createdOn.getMonth();
+        uploadsPerMonth[month] += 1;
+      }
+    });
+    return uploadsPerMonth;
+  }
 }

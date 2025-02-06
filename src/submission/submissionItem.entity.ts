@@ -10,4 +10,7 @@ export class SubmissionItem {
 
   @Column({ name: 'FileId' })
   fileId: string;
+
+  @Column({ name: 'CreatedOn' })
+  createdOn: Date;
 }
