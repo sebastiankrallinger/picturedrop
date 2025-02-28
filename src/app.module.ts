@@ -13,8 +13,10 @@ import { Voucher } from './voucher/voucher.entity';
 import { Challenge } from './challenge/challenge.entity';
 import { File } from './file/file.entity';
 import { Submission } from './submission/submission.entity';
-import { WorkplaceUser } from './workplaceUser/workplaceUser.entity';
 import { SubmissionItem } from './submission/submissionItem.entity';
+import { WorkplaceUser } from './workplaceUser/workplaceUser.entity';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 @Module({
   imports: [
@@ -45,5 +47,7 @@ import { SubmissionItem } from './submission/submissionItem.entity';
     SubmissionModule,
     WorkplaceUserModule,
   ],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
